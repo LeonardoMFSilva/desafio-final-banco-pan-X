@@ -4,5 +4,5 @@
 - João Pedro de Faria Oliveira
 - Leonardo Silva
 - Marcus Vinicius Santos de Oliveira
-- Maria Júila Alencar Muniz
+- Maria Júlia Alencar Muniz
 - Yuri Jivago Xavier Diniz

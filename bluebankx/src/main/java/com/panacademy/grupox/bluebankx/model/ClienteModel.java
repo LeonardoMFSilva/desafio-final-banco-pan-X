@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 public class ClienteModel {
 
+    private Integer id;
     private String cpf;
     private String nome;
     private LocalDate dataNasc;

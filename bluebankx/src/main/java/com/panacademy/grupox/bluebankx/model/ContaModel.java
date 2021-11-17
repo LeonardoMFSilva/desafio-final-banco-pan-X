@@ -1,28 +1,32 @@
 package com.panacademy.grupox.bluebankx.model;
 
+import java.math.BigDecimal;
+
 public class ContaModel {
-    private int id;
+    private Integer id;
     private String nome;
     private String tipo;
-    private String numero_conta;
-    private double saldo;
-    private double credito;
+    private String numConta;
+    private BigDecimal saldo;
+    private BigDecimal credito;
+    private BigDecimal creditoTotal;
 
-    public ContaModel(int id, String nome, String tipo, String numero_conta, double saldo, double credito){
+    public ContaModel(Integer id, String nome, String tipo, String numConta, BigDecimal saldo, BigDecimal credito, BigDecimal creditoTotal) {
         super();
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
-        this.numero_conta = numero_conta;
+        this.numConta = numConta;
         this.saldo = saldo;
         this.credito = credito;
+        this.creditoTotal = creditoTotal;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -42,27 +46,35 @@ public class ContaModel {
         this.tipo = tipo;
     }
 
-    public String getNumero_conta() {
-        return numero_conta;
+    public String getNumConta() {
+        return numConta;
     }
 
-    public void setNumero_conta(String numero_conta) {
-        this.numero_conta = numero_conta;
+    public void setNumConta(String numConta) {
+        this.numConta = numConta;
     }
 
-    public double getSaldo() {
+    public BigDecimal getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }
 
-    public double getCredito() {
+    public BigDecimal getCredito() {
         return credito;
     }
 
-    public void setCredito(double credito) {
+    public void setCredito(BigDecimal credito) {
         this.credito = credito;
+    }
+
+    public BigDecimal getCreditoTotal() {
+        return creditoTotal;
+    }
+
+    public void setCreditoTotal(BigDecimal creditoTotal) {
+        this.creditoTotal = creditoTotal;
     }
 }

@@ -1,5 +1,7 @@
 package com.panacademy.grupox.bluebankx.model;
 
+import com.panacademy.grupox.bluebankx.helpers.UF;
+
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;

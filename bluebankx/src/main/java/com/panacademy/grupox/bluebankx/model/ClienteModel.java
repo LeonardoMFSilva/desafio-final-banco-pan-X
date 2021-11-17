@@ -6,27 +6,59 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import javax.persistence.*;
 
-public class ClienteModel {
-
+@Entity
+@Table(name = "CLIENTES")
+public class ClienteModel extends AbstractEntity<Long>{
+    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
     private Integer id;
+
+    @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
+
+    @Column(name = "nome", nullable = false)
     private String nome;
+
+    @Column(name = "data_Nascimento", nullable = false, columnDefinition = "DATE")
     private LocalDate dataNasc;
+
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    @Column(name = "telefone", nullable = false, unique = true)
     private String telefone;
+
+    @Column(name = "profissao", nullable = false)
     private String profissao;
+
+    @Column(name = "renda", nullable = false)
     private BigDecimal renda;
+
+    @Column(name = "patrimonio", nullable = false)
     private BigDecimal patrimonio;
 
     //Endereço
+    @Column(name = "cep", nullable = false)
     private String cep;
+
+    @Column(name = "logradouro", nullable = false)
     private String logradouro;
+
+    @Column(name = "bairro", nullable = false)
     private String bairro;
+
+    @Column(name = "numero", nullable = false)
     private Integer numero;
+
+    @Column(name = "complemento", nullable = true)
     private String complemento;
+
+    @Column(name = "cidade", nullable = false)
     private String cidade;
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "uf", nullable = false)
     private UF uf;
 
     // CONTA

@@ -1,14 +1,30 @@
 package com.panacademy.grupox.bluebankx.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
-public class ContaModel {
+@Entity
+@Table(name = "CONTAS")
+public class ContaModel extends AbstractEntity<Long>{
+    @Column(name = "id_conta", nullable = false, unique = true, columnDefinition = "INT")
     private Integer id;
+
+    @Column(name = "nome", nullable = false)
     private String nome;
+
+    @Column(name = "tipo", nullable = false)
     private String tipo;
+
+    @Column(name = "numConta", nullable = false, unique = true)
     private String numConta;
+
+    @Column(name = "saldo", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00") // 7 dígitos com 2 casas decimais. E caso vc não coloque valores, por default vai ser o 0.00
     private BigDecimal saldo;
+
+    @Column(name = "credito", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
     private BigDecimal credito;
+
+    @Column(name = "creditoTotal", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
     private BigDecimal creditoTotal;
 
     public ContaModel(Integer id, String nome, String tipo, String numConta, BigDecimal saldo, BigDecimal credito, BigDecimal creditoTotal) {
@@ -21,11 +37,11 @@ public class ContaModel {
         this.credito = credito;
         this.creditoTotal = creditoTotal;
     }
-
+/*
     public Integer getId() {
         return id;
     }
-
+*/
     public void setId(Integer id) {
         this.id = id;
     }

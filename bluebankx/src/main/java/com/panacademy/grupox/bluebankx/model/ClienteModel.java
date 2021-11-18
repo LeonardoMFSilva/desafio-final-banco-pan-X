@@ -62,7 +62,13 @@ public class ClienteModel extends AbstractEntity<Long>{
     private UF uf;
 
     // CONTA
-    private String numConta;
+    @OneToOne
+    @JoinColumn(name = "conta_model_id_fk")
+    private ContaModel contaModel;
+
+    public ContaModel getContaModel() {
+        return contaModel;
+    }
 
     public String getCpf() {
         return cpf;
@@ -184,14 +190,6 @@ public class ClienteModel extends AbstractEntity<Long>{
         this.uf = uf;
     }
 
-    public String getNumConta() {
-        return numConta;
-    }
-
-    public void setNumConta(String numConta) {
-        this.numConta = numConta;
-    }
-
     @Override
     public Integer getId() {
         return id;
@@ -200,5 +198,9 @@ public class ClienteModel extends AbstractEntity<Long>{
     @Override
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setContaModel(ContaModel contaModel) {
+        this.contaModel = contaModel;
     }
 }

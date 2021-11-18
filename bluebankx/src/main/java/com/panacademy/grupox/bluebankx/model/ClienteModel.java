@@ -32,10 +32,10 @@ public class ClienteModel extends AbstractEntity<Long>{
     @Column(name = "profissao", nullable = false)
     private String profissao;
 
-    @Column(name = "renda", nullable = false)
+    @Column(name = "renda", nullable = false, columnDefinition = "DECIMAL(8, 2) DEFAULT 0.00")
     private BigDecimal renda;
 
-    @Column(name = "patrimonio", nullable = false)
+    @Column(name = "patrimonio", nullable = false, columnDefinition = "DECIMAL(11, 2) DEFAULT 0.00")
     private BigDecimal patrimonio;
 
     //Endereço

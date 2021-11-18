@@ -13,13 +13,13 @@ public abstract class AbstractEntity<ID extends Serializable> implements Seriali
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Isso já é auto_increment
-    private ID id;
+    private Integer id;
 
-    public ID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

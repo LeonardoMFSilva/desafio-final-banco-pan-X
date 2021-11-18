@@ -15,7 +15,7 @@ public class ContaModel extends AbstractEntity<Long>{
     @Column(name = "tipo", nullable = false)
     private String tipo;
 
-    @Column(name = "numConta", nullable = false, unique = true)
+    @Column(name = "num_conta", nullable = false, unique = true)
     private String numConta;
 
     @Column(name = "saldo", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00") // 7 dígitos com 2 casas decimais. E caso vc não coloque valores, por default vai ser o 0.00
@@ -24,7 +24,7 @@ public class ContaModel extends AbstractEntity<Long>{
     @Column(name = "credito", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
     private BigDecimal credito;
 
-    @Column(name = "creditoTotal", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
+    @Column(name = "credito_total", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
     private BigDecimal creditoTotal;
 
     public ContaModel(Integer id, String nome, String tipo, String numConta, BigDecimal saldo, BigDecimal credito, BigDecimal creditoTotal) {
@@ -37,11 +37,12 @@ public class ContaModel extends AbstractEntity<Long>{
         this.credito = credito;
         this.creditoTotal = creditoTotal;
     }
-/*
+
+    //@Override
     public Integer getId() {
         return id;
     }
-*/
+
     public void setId(Integer id) {
         this.id = id;
     }

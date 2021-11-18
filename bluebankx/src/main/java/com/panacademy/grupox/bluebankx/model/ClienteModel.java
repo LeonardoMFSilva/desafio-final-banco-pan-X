@@ -20,7 +20,7 @@ public class ClienteModel extends AbstractEntity<Long>{
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "data_Nascimento", nullable = false, columnDefinition = "DATE")
+    @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
     private LocalDate dataNasc;
 
     @Column(name = "email", nullable = false, unique = true)
@@ -190,5 +190,15 @@ public class ClienteModel extends AbstractEntity<Long>{
 
     public void setNumConta(String numConta) {
         this.numConta = numConta;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

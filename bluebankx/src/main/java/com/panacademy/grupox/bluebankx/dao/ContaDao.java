@@ -1,13 +1,14 @@
 package com.panacademy.grupox.bluebankx.dao;
 
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
+import com.panacademy.grupox.bluebankx.model.ContaModel;
 
 import java.util.List;
 
 public interface ContaDao {
-    void save(ContaDao contaDao);
-    void update(ContaDao contaDao);
+    void save(ContaModel contaModel);
+    void update(ContaModel contaModel);
     void delete(Long id);
-    ContaDao findById(Long id);
-    List<ContaDao> findAll();
+    ContaModel findById(Long id);
+    List<ContaModel> findAll();
 }

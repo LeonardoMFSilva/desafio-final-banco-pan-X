@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "CONTAS")
 public class ContaModel extends AbstractEntity<Long>{
-    @Column(name = "id_conta", nullable = false, unique = true, columnDefinition = "INT")
-    private Integer id;
+    //@Column(name = "id_conta", nullable = false, unique = true, columnDefinition = "INT")
+    //private Integer id;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -39,13 +39,13 @@ public class ContaModel extends AbstractEntity<Long>{
     }
 */
     //@Override
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 
     public String getNome() {
         return nome;

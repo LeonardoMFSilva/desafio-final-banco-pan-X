@@ -8,8 +8,8 @@ import javax.persistence.*;
 @Table(name = "ENDERECOS")
 public class EnderecoModel extends AbstractEntity{
 
-    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
-    private Integer id;
+//    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
+//    private Integer id;
 
     @Column(name = "cep", nullable = false)
     private String cep;
@@ -33,8 +33,8 @@ public class EnderecoModel extends AbstractEntity{
     @Column(name = "uf", nullable = false)
     private UF uf;
 
-    public EnderecoModel(final Integer id, final String cep, final String logradouro, final String bairro, final Integer numero, final String complemento, final String cidade, final UF uf) {
-        this.id = id;
+    public EnderecoModel(final String cep, final String logradouro, final String bairro, final Integer numero, final String complemento, final String cidade, final UF uf) {
+        //this.id = id;
         this.cep = cep;
         this.logradouro = logradouro;
         this.bairro = bairro;
@@ -44,15 +44,15 @@ public class EnderecoModel extends AbstractEntity{
         this.uf = uf;
     }
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(final Integer id) {
-        this.id = id;
-    }
+//    @Override
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    @Override
+//    public void setId(final Integer id) {
+//        this.id = id;
+//    }
 
     public String getCep() {
         return cep;

@@ -9,33 +9,33 @@ import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "CLIENTES")
+@Table(name = "CLIENTES")
 public class ClienteModel extends AbstractEntity<Long>{
-    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
-    private Integer id;
+//    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
+//    private Long id;
 
-    @Column(name = "cpf", nullable = false, unique = true)
+    @Column(name = "cpf", unique = true)
     private String cpf;
 
-    @Column(name = "nome", nullable = false)
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
+    @Column(name = "data_nascimento", columnDefinition = "DATE")
     private LocalDate dataNasc;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "telefone", nullable = false, unique = true)
+    @Column(name = "telefone", unique = true)
     private String telefone;
 
-    @Column(name = "profissao", nullable = false)
+    @Column(name = "profissao")
     private String profissao;
 
-    @Column(name = "renda", nullable = false, columnDefinition = "DECIMAL(8, 2) DEFAULT 0.00")
+    @Column(name = "renda", columnDefinition = "DECIMAL(8, 2) DEFAULT 0.00")
     private BigDecimal renda;
 
-    @Column(name = "patrimonio", nullable = false, columnDefinition = "DECIMAL(11, 2) DEFAULT 0.00")
+    @Column(name = "patrimonio", columnDefinition = "DECIMAL(11, 2) DEFAULT 0.00")
     private BigDecimal patrimonio;
 
     //Endereço
@@ -116,15 +116,15 @@ public class ClienteModel extends AbstractEntity<Long>{
         this.patrimonio = patrimonio;
     }
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }
+//    @Override
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    @Override
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 
     public void setContaModel(ContaModel contaModel) {
         this.contaModel = contaModel;

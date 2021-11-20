@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 @Table(name = "TRANSACOES")
 public class TransacaoModel extends AbstractEntity<Long>{
 
-    @Id
-    @GeneratedValue
-    private Integer id;
+//    @Id
+//    @GeneratedValue
+//    private Integer id;
 
     @Column(name = "tipoTransacao")
     private TipoTrasacao tipoTransacao;
@@ -26,8 +26,8 @@ public class TransacaoModel extends AbstractEntity<Long>{
     private BigDecimal valor;
     private LocalDateTime dataHoraTransacao;
 
-    public TransacaoModel(Integer id, TipoTrasacao tipoTransacao, ClienteModel clienteOrigem, ClienteModel clienteDestino, BigDecimal valor, LocalDateTime dataHoraTransacao) {
-        this.id = id;
+    public TransacaoModel(TipoTrasacao tipoTransacao, ClienteModel clienteOrigem, ClienteModel clienteDestino, BigDecimal valor, LocalDateTime dataHoraTransacao) {
+       //this.id = id;
         this.tipoTransacao = tipoTransacao;
         this.clienteOrigem = clienteOrigem;
         this.clienteDestino = clienteDestino;
@@ -35,15 +35,15 @@ public class TransacaoModel extends AbstractEntity<Long>{
         this.dataHoraTransacao = dataHoraTransacao;
     }
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }
+//    @Override
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    @Override
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 
     public TipoTrasacao getTipoTransacao() {
         return tipoTransacao;

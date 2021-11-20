@@ -38,6 +38,11 @@ public class ClienteModel extends AbstractEntity<Long>{
     @Column(name = "patrimonio", nullable = false, columnDefinition = "DECIMAL(11, 2) DEFAULT 0.00")
     private BigDecimal patrimonio;
 
+    //Endereço
+    @OneToOne
+    @JoinColumn(name = "endereco_model_id_fk")
+    private EnderecoModel enderecoModel;
+
     // CONTA
     @OneToOne
     @JoinColumn(name = "conta_model_id_fk")
@@ -110,7 +115,7 @@ public class ClienteModel extends AbstractEntity<Long>{
     public void setPatrimonio(BigDecimal patrimonio) {
         this.patrimonio = patrimonio;
     }
-/*
+
     @Override
     public Integer getId() {
         return id;
@@ -120,7 +125,7 @@ public class ClienteModel extends AbstractEntity<Long>{
     public void setId(Integer id) {
         this.id = id;
     }
-*/
+
     public void setContaModel(ContaModel contaModel) {
         this.contaModel = contaModel;
     }

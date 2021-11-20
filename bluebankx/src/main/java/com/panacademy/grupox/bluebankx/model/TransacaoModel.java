@@ -1,108 +1,89 @@
 package com.panacademy.grupox.bluebankx.model;
 
-public class TransacaoModel {
+import com.panacademy.grupox.bluebankx.helpers.TipoTrasacao;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+@Entity
+public class TransacaoModel extends AbstractEntity<Long>{
+
+    @Id
+    @GeneratedValue
     private Integer id;
-    private String boleto;
-    private String deposito;
-    private String doc;
-    private String pag;
-    private String pix;
-    private String saque;
-    private String trCredito;
-    private String trDebito;
-    private String ted;
 
-    public TransacaoModel(final Integer id, final String boleto, final String deposito, final String doc, final String pag, final String pix, final String saque, final String trCredito, final String trDebito, final String ted) {
+    @Column(name = "tipoTransacao")
+    private TipoTrasacao tipoTransacao;
+
+    @Column(name = "clienteOrigem")
+    private ClienteModel clienteOrigem;
+
+    @Column(name = "clienteDestino")
+    private ClienteModel clienteDestino;
+
+    private BigDecimal valor;
+    private LocalDateTime dataHoraTransacao;
+
+    public TransacaoModel(Integer id, TipoTrasacao tipoTransacao, ClienteModel clienteOrigem, ClienteModel clienteDestino, BigDecimal valor, LocalDateTime dataHoraTransacao) {
         this.id = id;
-        this.boleto = boleto;
-        this.deposito = deposito;
-        this.doc = doc;
-        this.pag = pag;
-        this.pix = pix;
-        this.saque = saque;
-        this.trCredito = trCredito;
-        this.trDebito = trDebito;
-        this.ted = ted;
+        this.tipoTransacao = tipoTransacao;
+        this.clienteOrigem = clienteOrigem;
+        this.clienteDestino = clienteDestino;
+        this.valor = valor;
+        this.dataHoraTransacao = dataHoraTransacao;
     }
 
+    @Override
     public Integer getId() {
         return id;
     }
 
-    public void setId(final Integer id) {
+    @Override
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getBoleto() {
-        return boleto;
+    public TipoTrasacao getTipoTransacao() {
+        return tipoTransacao;
     }
 
-    public void setBoleto(final String boleto) {
-        this.boleto = boleto;
+    public void setTipoTransacao(TipoTrasacao tipoTransacao) {
+        this.tipoTransacao = tipoTransacao;
     }
 
-    public String getDeposito() {
-        return deposito;
+    public ClienteModel getClienteOrigem() {
+        return clienteOrigem;
     }
 
-    public void setDeposito(final String deposito) {
-        this.deposito = deposito;
+    public void setClienteOrigem(ClienteModel clienteOrigem) {
+        this.clienteOrigem = clienteOrigem;
     }
 
-    public String getDoc() {
-        return doc;
+    public ClienteModel getClienteDestino() {
+        return clienteDestino;
     }
 
-    public void setDoc(final String doc) {
-        this.doc = doc;
+    public void setClienteDestino(ClienteModel clienteDestino) {
+        this.clienteDestino = clienteDestino;
     }
 
-    public String getPag() {
-        return pag;
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setPag(final String pag) {
-        this.pag = pag;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 
-    public String getPix() {
-        return pix;
+    public LocalDateTime getDataHoraTransacao() {
+        return dataHoraTransacao;
     }
 
-    public void setPix(final String pix) {
-        this.pix = pix;
-    }
-
-    public String getSaque() {
-        return saque;
-    }
-
-    public void setSaque(final String saque) {
-        this.saque = saque;
-    }
-
-    public String getTrCredito() {
-        return trCredito;
-    }
-
-    public void setTrCredito(final String trCredito) {
-        this.trCredito = trCredito;
-    }
-
-    public String getTrDebito() {
-        return trDebito;
-    }
-
-    public void setTrDebito(final String trDebito) {
-        this.trDebito = trDebito;
-    }
-
-    public String getTed() {
-        return ted;
-    }
-
-    public void setTed(final String ted) {
-        this.ted = ted;
+    public void setDataHoraTransacao(LocalDateTime dataHoraTransacao) {
+        this.dataHoraTransacao = dataHoraTransacao;
     }
 }

@@ -1,4 +1,4 @@
-package com.panacademy.grupox.bluebankx.model;
+package com.panacademy.grupox.bluebankx.helpers;
 
 public enum UF {
     AC("AC", "Acre"),

@@ -1,33 +1,51 @@
 package com.panacademy.grupox.bluebankx.model;
 
+import com.panacademy.grupox.bluebankx.helpers.UF;
+
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import javax.persistence.*;
 
-public class ClienteModel {
+@Entity
+@Table(name = "CLIENTES")
+public class ClienteModel extends AbstractEntity<Long>{
+    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
+    private Integer id;
 
+    @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
+
+    @Column(name = "nome", nullable = false)
     private String nome;
+
+    @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
     private LocalDate dataNasc;
+
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    @Column(name = "telefone", nullable = false, unique = true)
     private String telefone;
+
+    @Column(name = "profissao", nullable = false)
     private String profissao;
+
+    @Column(name = "renda", nullable = false, columnDefinition = "DECIMAL(8, 2) DEFAULT 0.00")
     private BigDecimal renda;
+
+    @Column(name = "patrimonio", nullable = false, columnDefinition = "DECIMAL(11, 2) DEFAULT 0.00")
     private BigDecimal patrimonio;
 
-    //Endereço
-    private String cep;
-    private String logradouro;
-    private String bairro;
-    private Integer numero;
-    private String complemento;
-    private String cidade;
-    @Enumerated(EnumType.STRING)
-    private UF uf;
-
     // CONTA
-    private String numConta;
+    @OneToOne
+    @JoinColumn(name = "conta_model_id_fk")
+    private ContaModel contaModel;
+
+    public ContaModel getContaModel() {
+        return contaModel;
+    }
 
     public String getCpf() {
         return cpf;
@@ -93,67 +111,17 @@ public class ClienteModel {
         this.patrimonio = patrimonio;
     }
 
-    public String getCep() {
-        return cep;
+    @Override
+    public Integer getId() {
+        return id;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public UF getUf() {
-        return uf;
-    }
-
-    public void setUf(UF uf) {
-        this.uf = uf;
-    }
-
-    public String getNumConta() {
-        return numConta;
-    }
-
-    public void setNumConta(String numConta) {
-        this.numConta = numConta;
+    public void setContaModel(ContaModel contaModel) {
+        this.contaModel = contaModel;
     }
 }

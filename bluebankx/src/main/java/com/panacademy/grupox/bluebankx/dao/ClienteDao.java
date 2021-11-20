@@ -4,7 +4,7 @@ import com.panacademy.grupox.bluebankx.model.ClienteModel;
 
 import java.util.List;
 
-public interface ClienteDao <T>{
+public interface ClienteDao {
     void save(ClienteModel clienteModel);
     void update(ClienteModel clienteModel);
     void delete(Long id);

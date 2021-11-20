@@ -9,41 +9,35 @@ import java.util.List;
 
 public abstract class AbstractDao<T, PK extends Serializable> {
 
-    @SuppressWarnings("unchecked")
-    private final Class<T> entityClass = (Class<T>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+    private final Class<T> entityClass = (Class<T>)
+            ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    protected EntityManager getEntityManager() {
+    protected EntityManager getEntityManager(){
         return entityManager;
     }
 
-    public void save(T entity) {
-
+    public void save(T entity){
         entityManager.persist(entity);
     }
 
-    public void update(T entity) {
-
+    public void update(T entity){
         entityManager.merge(entity);
     }
 
-    public void delete(PK id) {
-
+    public void delete(PK id){
         entityManager.remove(entityManager.getReference(entityClass, id));
     }
 
-    public T findById(PK id) {
-
+    public T findById(PK id){
         return entityManager.find(entityClass, id);
     }
 
-    public List<T> findAll() {
-
-        return entityManager
-                .createQuery("from " + entityClass.getSimpleName(), entityClass)
-                .getResultList();
+    public List<T> findAll(){
+        return entityManager.createQuery("from " +
+                entityClass.getSimpleName(), entityClass).getResultList();
     }
 
     // Coloquei protected pq só quero que esse método seja acessado por herança e no máximo pelas filhas
@@ -54,4 +48,5 @@ public abstract class AbstractDao<T, PK extends Serializable> {
         }
         return query.getResultList();
     }
+
 }

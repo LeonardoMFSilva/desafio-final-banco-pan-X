@@ -26,7 +26,7 @@ public class ContaModel extends AbstractEntity<Long>{
 
     @Column(name = "credito_total", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
     private BigDecimal creditoTotal;
-
+/*
     public ContaModel(Integer id, String nome, String tipo, String numConta, BigDecimal saldo, BigDecimal credito, BigDecimal creditoTotal) {
         super();
         this.id = id;
@@ -37,7 +37,7 @@ public class ContaModel extends AbstractEntity<Long>{
         this.credito = credito;
         this.creditoTotal = creditoTotal;
     }
-
+*/
     //@Override
     public Integer getId() {
         return id;

@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CLIENTES")
+//@Table(name = "CLIENTES")
 public class ClienteModel extends AbstractEntity<Long>{
     @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
     private Integer id;
@@ -39,13 +39,13 @@ public class ClienteModel extends AbstractEntity<Long>{
     private BigDecimal patrimonio;
 
     //Endereço
-    @OneToOne
-    @JoinColumn(name = "endereco_model_id_fk")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_model_id")
     private EnderecoModel enderecoModel;
 
     // CONTA
-    @OneToOne
-    @JoinColumn(name = "conta_model_id_fk")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "conta_model_id")
     private ContaModel contaModel;
 
     public ContaModel getContaModel() {

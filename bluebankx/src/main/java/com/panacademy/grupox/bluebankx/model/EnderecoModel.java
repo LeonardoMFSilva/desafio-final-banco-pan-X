@@ -2,10 +2,10 @@ package com.panacademy.grupox.bluebankx.model;
 
 import com.panacademy.grupox.bluebankx.helpers.UF;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "ENDERECOS")
 public class EnderecoModel extends AbstractEntity{
 
     @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")

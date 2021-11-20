@@ -2,14 +2,12 @@ package com.panacademy.grupox.bluebankx.model;
 
 import com.panacademy.grupox.bluebankx.helpers.TipoTrasacao;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "TRANSACOES")
 public class TransacaoModel extends AbstractEntity<Long>{
 
     @Id

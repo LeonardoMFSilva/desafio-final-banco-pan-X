@@ -110,7 +110,7 @@ public class ClienteModel extends AbstractEntity<Long>{
     public void setPatrimonio(BigDecimal patrimonio) {
         this.patrimonio = patrimonio;
     }
-/*
+
     @Override
     public Integer getId() {
         return id;
@@ -120,7 +120,7 @@ public class ClienteModel extends AbstractEntity<Long>{
     public void setId(Integer id) {
         this.id = id;
     }
-*/
+
     public void setContaModel(ContaModel contaModel) {
         this.contaModel = contaModel;
     }

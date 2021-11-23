@@ -51,7 +51,7 @@ public class ClientesController {
 //    }
 
     @PostMapping ("/cadastrar")
-    public String createUser(ClienteModel clienteModel, RedirectAttributes attr){
+    public String createUser(@RequestBody ClienteModel clienteModel, RedirectAttributes attr){
         cliente.salvar(clienteModel);
         attr.addFlashAttribute("success", "Cliente inserido com sucesso!");
         return "redirect:/clientes/cadastrar";

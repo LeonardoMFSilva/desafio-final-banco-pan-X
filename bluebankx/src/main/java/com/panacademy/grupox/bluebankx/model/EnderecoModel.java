@@ -5,7 +5,7 @@ import com.panacademy.grupox.bluebankx.helpers.UF;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ENDERECOS")
+@Table(name = "enderecos")
 public class EnderecoModel extends AbstractEntity{
 
 //    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")

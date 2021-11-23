@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "CONTAS")
+@Table(name = "contas")
 public class ContaModel extends AbstractEntity<Long>{
     //@Column(name = "id_conta", nullable = false, unique = true, columnDefinition = "INT")
     //private Integer id;

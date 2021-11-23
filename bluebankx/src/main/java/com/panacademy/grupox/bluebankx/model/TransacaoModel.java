@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "TRANSACOES")
+@Table(name = "transacoes")
 public class TransacaoModel extends AbstractEntity<Long>{
 
 //    @Id

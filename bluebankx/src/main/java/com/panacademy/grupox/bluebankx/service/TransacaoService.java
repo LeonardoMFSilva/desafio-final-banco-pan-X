@@ -1,8 +1,7 @@
 package com.panacademy.grupox.bluebankx.service;
 
-
-import com.panacademy.grupox.bluebankx.dao.ClienteDao;
-import com.panacademy.grupox.bluebankx.model.ClienteModel;
+import com.panacademy.grupox.bluebankx.dao.TransacaoDao;
+import com.panacademy.grupox.bluebankx.model.TransacaoModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,16 +10,17 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = false)
-public class ClienteServiceImpl{
-    @Autowired
-    private ClienteDao dao;
 
-    public void salvar(ClienteModel clienteModel){
-        dao.save(clienteModel);
+public class TransacaoService {
+    @Autowired
+    private TransacaoDao dao;
+
+    public void salvar(TransacaoModel transacaoModel){
+        dao.save(transacaoModel);
     }
 
-    public void editar(ClienteModel clienteModel) {
-        dao.update(clienteModel);
+    public void editar(TransacaoModel transacaoModel) {
+        dao.update(transacaoModel);
     }
 
     public void excluir(Long id) {
@@ -28,15 +28,16 @@ public class ClienteServiceImpl{
     }
 
     @Transactional(readOnly = true)
-    public ClienteModel buscarPorId(Long id) {
+    public TransacaoModel buscarPorId(Long id) {
         //
         return dao.findById(id);
     }
 
     @Transactional(readOnly = true)
-    public List<ClienteModel> buscarTodos() {
+    public List<TransacaoModel> buscarTodos() {
         //
         return dao.findAll();
     }
 
 }
+

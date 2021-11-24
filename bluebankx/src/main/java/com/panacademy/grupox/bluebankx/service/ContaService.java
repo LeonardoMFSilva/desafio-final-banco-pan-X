@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = false)
-public class ContaServiceImpl{
+public class ContaService {
     @Autowired
     private ContaDao dao;
 

@@ -1,11 +1,11 @@
 package com.panacademy.grupox.bluebankx.controller;
 
 
-import com.panacademy.grupox.bluebankx.dao.ClienteDao;
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
-import com.panacademy.grupox.bluebankx.service.ClienteServiceImpl;
+import com.panacademy.grupox.bluebankx.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
 public class ClientesController {
 
     @Autowired
-    private ClienteServiceImpl cliente;
+    private ClienteService cliente;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -65,8 +65,10 @@ public class ClientesController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable long id) {
-
+    public String deleteById(@PathVariable long id, ModelMap model) {
+        cliente.excluir(id);
+        model.addAttribute("success", "Cliente excluído com sucesso.");
+        return "redirect:/home";
     }
 
 }

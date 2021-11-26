@@ -26,13 +26,6 @@ public class ClientesController {
     @Autowired
     private ClienteService cliente;
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    protected EntityManager getEntityManager(){
-        return entityManager;
-    }
-
     @GetMapping("/{id}")
     public ClienteModel getById(@PathVariable long id){
         return cliente.buscarPorId(id);
@@ -42,13 +35,6 @@ public class ClientesController {
     public ResponseEntity<ClienteModel> getByNome(@PathVariable String nome){
         return null;
     }
-
-//    @PostMapping ("/cadastrar")
-//    public ClienteModel createUser(ClienteModel clienteModel, RedirectAttributes attr){
-//        cliente.salvar(clienteModel);
-//        attr.addFlashAttribute("success", "Departamento inserido com sucesso!");
-//        return "redirect:/departamentos/cadastrar";
-//    }
 
     @PostMapping ("/cadastrar")
     public String createUser(@RequestBody ClienteModel clienteModel, RedirectAttributes attr){

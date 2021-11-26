@@ -1,9 +1,5 @@
 package com.panacademy.grupox.bluebankx.model;
 
-import com.panacademy.grupox.bluebankx.helpers.UF;
-
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import javax.persistence.*;
@@ -11,8 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "clientes")
 public class ClienteModel extends AbstractEntity<Long>{
-//    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
-//    private Long id;
 
     @Column(name = "cpf", unique = true)
     private String cpf;
@@ -115,17 +109,6 @@ public class ClienteModel extends AbstractEntity<Long>{
     public void setPatrimonio(BigDecimal patrimonio) {
         this.patrimonio = patrimonio;
     }
-
-//    @Override
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    @Override
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public EnderecoModel getEnderecoModel() {
         return enderecoModel;

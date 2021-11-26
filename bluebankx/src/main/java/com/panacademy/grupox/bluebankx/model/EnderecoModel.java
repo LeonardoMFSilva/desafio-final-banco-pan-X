@@ -6,10 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "enderecos")
-public class EnderecoModel extends AbstractEntity{
-
-//    @Column(name = "id_cliente", nullable = false, unique = true, columnDefinition = "INT")
-//    private Integer id;
+public class EnderecoModel extends AbstractEntity<Long>{
 
     @Column(name = "cep", nullable = false)
     private String cep;
@@ -33,8 +30,9 @@ public class EnderecoModel extends AbstractEntity{
     @Column(name = "uf", nullable = false)
     private UF uf;
 
-    public EnderecoModel(final String cep, final String logradouro, final String bairro, final Integer numero, final String complemento, final String cidade, final UF uf) {
-        //this.id = id;
+    public EnderecoModel() {}
+
+    public EnderecoModel(String cep, String logradouro, String bairro, Integer numero, String complemento, String cidade, UF uf) {
         this.cep = cep;
         this.logradouro = logradouro;
         this.bairro = bairro;
@@ -44,21 +42,11 @@ public class EnderecoModel extends AbstractEntity{
         this.uf = uf;
     }
 
-//    @Override
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    @Override
-//    public void setId(final Integer id) {
-//        this.id = id;
-//    }
-
     public String getCep() {
         return cep;
     }
 
-    public void setCep(final String cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -66,7 +54,7 @@ public class EnderecoModel extends AbstractEntity{
         return logradouro;
     }
 
-    public void setLogradouro(final String logradouro) {
+    public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
     }
 
@@ -74,7 +62,7 @@ public class EnderecoModel extends AbstractEntity{
         return bairro;
     }
 
-    public void setBairro(final String bairro) {
+    public void setBairro(String bairro) {
         this.bairro = bairro;
     }
 
@@ -82,7 +70,7 @@ public class EnderecoModel extends AbstractEntity{
         return numero;
     }
 
-    public void setNumero(final Integer numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
@@ -90,7 +78,7 @@ public class EnderecoModel extends AbstractEntity{
         return complemento;
     }
 
-    public void setComplemento(final String complemento) {
+    public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
 
@@ -98,7 +86,7 @@ public class EnderecoModel extends AbstractEntity{
         return cidade;
     }
 
-    public void setCidade(final String cidade) {
+    public void setCidade(String cidade) {
         this.cidade = cidade;
     }
 
@@ -106,7 +94,7 @@ public class EnderecoModel extends AbstractEntity{
         return uf;
     }
 
-    public void setUf(final UF uf) {
+    public void setUf(UF uf) {
         this.uf = uf;
     }
 }

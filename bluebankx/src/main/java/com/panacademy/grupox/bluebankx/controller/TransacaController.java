@@ -22,8 +22,8 @@ public class TransacaController {
 //    @Autowired
 //    private ContaService conta;
 //
-//    @Autowired
-//    private ClienteService cliente;
+    @Autowired
+    private ClienteService cliente;
 
     @GetMapping("/{id}")
     public TransacaoModel getById(@PathVariable long id){

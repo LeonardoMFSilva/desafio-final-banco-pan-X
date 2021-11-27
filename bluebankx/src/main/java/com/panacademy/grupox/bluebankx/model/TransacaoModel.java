@@ -1,5 +1,6 @@
 package com.panacademy.grupox.bluebankx.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.panacademy.grupox.bluebankx.helpers.TipoTrasacao;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class TransacaoModel extends AbstractEntity<Long>{
     @Column(name = "tipo_transacao")
     private TipoTrasacao tipoTransacao;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "local_date_time")
     private LocalDateTime dataHoraTransacao;
 
@@ -108,5 +110,13 @@ public class TransacaoModel extends AbstractEntity<Long>{
 
     public void setClienteOrigemTransacao(ClienteModel clienteOrigemTransacao) {
         this.clienteOrigemTransacao = clienteOrigemTransacao;
+    }
+
+    public ClienteModel getClienteDestinoTransacao() {
+        return clienteDestinoTransacao;
+    }
+
+    public void setClienteDestinoTransacao(ClienteModel clienteDestinoTransacao) {
+        this.clienteDestinoTransacao = clienteDestinoTransacao;
     }
 }

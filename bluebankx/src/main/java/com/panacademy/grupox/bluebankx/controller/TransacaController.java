@@ -13,7 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@Controller
+@RestController
 @RequestMapping("/transacao")
 public class TransacaController {
     @Autowired
@@ -40,20 +40,20 @@ public class TransacaController {
     public String createUser(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
         transacao.salvar(transacaoModel);
         attr.addFlashAttribute("success", "Transação inserida com sucesso!");
-        return "redirect:/contas/cadastrar";
+        return "redirect:/";
     }
 
     @PutMapping("/editar")
     public String editUser(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
         transacao.editar(transacaoModel);
         attr.addFlashAttribute("success", "Transação atualizada com sucesso!");
-        return "redirect:/contas/editar";
+        return "redirect:/";
     }
 
     @DeleteMapping("/{id}")
     public String deleteById(@PathVariable long id, ModelMap model) {
         transacao.excluir(id);
         model.addAttribute("success", "Transação excluída com sucesso.");
-        return "redirect:/home";
+        return "redirect:/";
     }
 }

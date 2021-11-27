@@ -2,6 +2,7 @@ package com.panacademy.grupox.bluebankx.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -41,6 +42,13 @@ public class ClienteModel extends AbstractEntity<Long>{
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "conta_model_id")
     private ContaModel contaModel;
+
+    //Transações
+    @OneToMany(mappedBy = "clienteOrigemTransacao")
+    private List<TransacaoModel> transacaoOrigem; //Muitas transações para um cliente origem
+
+    @OneToMany(mappedBy = "clienteDestinoTransacao")
+    private List<TransacaoModel> transacaoDestino; //Muitas transações para um cliente destino
 
     public ContaModel getContaModel() {
         return contaModel;

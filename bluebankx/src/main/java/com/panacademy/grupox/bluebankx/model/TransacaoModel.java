@@ -14,26 +14,43 @@ public class TransacaoModel extends AbstractEntity<Long>{
 //    @GeneratedValue
 //    private Integer id;
 
-    @Column(name = "tipoTransacao")
+    @Column(name = "valor")
+    private BigDecimal valor;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_transacao")
     private TipoTrasacao tipoTransacao;
 
-    @Column(name = "clienteOrigem")
-    private ClienteModel clienteOrigem;
-
-    @Column(name = "clienteDestino")
-    private ClienteModel clienteDestino;
-
-    private BigDecimal valor;
+    @Column(name = "local_date_time")
     private LocalDateTime dataHoraTransacao;
 
-    public TransacaoModel(TipoTrasacao tipoTransacao, ClienteModel clienteOrigem, ClienteModel clienteDestino, BigDecimal valor, LocalDateTime dataHoraTransacao) {
-       //this.id = id;
-        this.tipoTransacao = tipoTransacao;
-        this.clienteOrigem = clienteOrigem;
-        this.clienteDestino = clienteDestino;
-        this.valor = valor;
-        this.dataHoraTransacao = dataHoraTransacao;
-    }
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @Column(name = "cliente_origem_id")
+//    private ClienteModel clienteOrigem;
+//
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @Column(name = "cliente_destino_id")
+//    private ClienteModel clienteDestino;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente_destino_fk")
+    private ClienteModel clienteDestinoTransacao;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente_fk")
+    private ClienteModel clienteOrigemTransacao;
+
+//    public TransacaoModel() {
+//    }
+//
+//    public TransacaoModel(TipoTrasacao tipoTransacao, ClienteModel clienteOrigem, ClienteModel clienteDestino, BigDecimal valor, LocalDateTime dataHoraTransacao) {
+//       //this.id = id;
+//        this.tipoTransacao = tipoTransacao;
+//        this.clienteOrigem = clienteOrigem;
+//        this.clienteDestino = clienteDestino;
+//        this.valor = valor;
+//        this.dataHoraTransacao = dataHoraTransacao;
+//    }
 
 //    @Override
 //    public Integer getId() {
@@ -53,21 +70,21 @@ public class TransacaoModel extends AbstractEntity<Long>{
         this.tipoTransacao = tipoTransacao;
     }
 
-    public ClienteModel getClienteOrigem() {
-        return clienteOrigem;
-    }
-
-    public void setClienteOrigem(ClienteModel clienteOrigem) {
-        this.clienteOrigem = clienteOrigem;
-    }
-
-    public ClienteModel getClienteDestino() {
-        return clienteDestino;
-    }
-
-    public void setClienteDestino(ClienteModel clienteDestino) {
-        this.clienteDestino = clienteDestino;
-    }
+//    public ClienteModel getClienteOrigem() {
+//        return clienteOrigem;
+//    }
+//
+//    public void setClienteOrigem(ClienteModel clienteOrigem) {
+//        this.clienteOrigem = clienteOrigem;
+//    }
+//
+//    public ClienteModel getClienteDestino() {
+//        return clienteDestino;
+//    }
+//
+//    public void setClienteDestino(ClienteModel clienteDestino) {
+//        this.clienteDestino = clienteDestino;
+//    }
 
     public BigDecimal getValor() {
         return valor;
@@ -83,5 +100,13 @@ public class TransacaoModel extends AbstractEntity<Long>{
 
     public void setDataHoraTransacao(LocalDateTime dataHoraTransacao) {
         this.dataHoraTransacao = dataHoraTransacao;
+    }
+
+    public ClienteModel getClienteOrigemTransacao() {
+        return clienteOrigemTransacao;
+    }
+
+    public void setClienteOrigemTransacao(ClienteModel clienteOrigemTransacao) {
+        this.clienteOrigemTransacao = clienteOrigemTransacao;
     }
 }

@@ -23,7 +23,7 @@ public class TransacaoModel extends AbstractEntity<Long>{
     private TipoTrasacao tipoTransacao;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "local_date_time")
+    @Column(name = "data_hora_transacao")
     private LocalDateTime dataHoraTransacao;
 
 //    @OneToOne(cascade = CascadeType.ALL)

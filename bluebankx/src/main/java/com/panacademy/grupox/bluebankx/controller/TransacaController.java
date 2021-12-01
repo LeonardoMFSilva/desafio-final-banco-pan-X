@@ -13,6 +13,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @RestController
 @RequestMapping("/transacao")
 public class TransacaController {
@@ -38,6 +41,8 @@ public class TransacaController {
 
     @PostMapping("/cadastrar")
     public String createUser(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
+        LocalDateTime horario = LocalDateTime.now();
+        transacaoModel.setDataHoraTransacao(horario);
         transacao.salvar(transacaoModel);
         attr.addFlashAttribute("success", "Transação inserida com sucesso!");
         return "redirect:/";
@@ -55,5 +60,16 @@ public class TransacaController {
         transacao.excluir(id);
         model.addAttribute("success", "Transação excluída com sucesso.");
         return "redirect:/";
+    }
+
+    @GetMapping("/listartodos/{id}")
+    public List<TransacaoModel> listarTransacoes(@PathVariable long id){
+        //transacao.listarTransacoes(id);
+        return transacao.listarTransacoes(id);
+    }
+
+    @GetMapping("/listartodosdata/{id}&{dataInicio}&{dataFim}")
+    public List<TransacaoModel> listarTransacoesDatas(@PathVariable long id, @PathVariable String dataInicio, @PathVariable String dataFim){
+                return transacao.listarTransacoesData(id, dataInicio, dataFim);
     }
 }

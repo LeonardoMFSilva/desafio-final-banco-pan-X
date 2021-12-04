@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
@@ -32,9 +33,9 @@ public class ClientesController {
         return cliente.buscarPorId(id);
     }
 
-    @GetMapping("/cliente/{nome}")
-    public ResponseEntity<ClienteModel> getByNome(@PathVariable String nome){
-        return null;
+    @GetMapping("/listar")
+    public List<ClienteModel> getByNome(){
+        return cliente.buscarTodos();
     }
 
     @PostMapping ("/cadastrar")

@@ -11,6 +11,5 @@ public class HomeController {
     @RequestMapping("/")
     public String home() {
         return "Página inicial em construção";
-        //return "home.html";
     }
 }

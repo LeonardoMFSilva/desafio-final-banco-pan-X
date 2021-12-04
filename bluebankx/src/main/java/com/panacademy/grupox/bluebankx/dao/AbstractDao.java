@@ -40,7 +40,6 @@ public abstract class AbstractDao<T, PK extends Serializable> {
                 entityClass.getSimpleName(), entityClass).getResultList();
     }
 
-    // Coloquei protected pq só quero que esse método seja acessado por herança e no máximo pelas filhas
     protected List<T> createQuery(String jpql, Object... params) {
         TypedQuery<T> query = entityManager.createQuery(jpql, entityClass);
         for (int i = 0; i < params.length; i++) {

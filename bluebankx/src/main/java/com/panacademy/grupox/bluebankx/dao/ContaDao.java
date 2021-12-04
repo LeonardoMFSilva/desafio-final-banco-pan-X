@@ -1,8 +1,6 @@
 package com.panacademy.grupox.bluebankx.dao;
 
-import com.panacademy.grupox.bluebankx.model.ClienteModel;
 import com.panacademy.grupox.bluebankx.model.ContaModel;
-
 import java.util.List;
 
 public interface ContaDao {

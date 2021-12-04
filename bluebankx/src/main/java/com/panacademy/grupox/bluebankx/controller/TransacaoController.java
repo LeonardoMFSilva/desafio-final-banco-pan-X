@@ -17,22 +17,10 @@ public class TransacaoController {
     @Autowired
     private TransacaoService transacao;
 
-//    @Autowired
-//    private ContaService conta;
-//
-    @Autowired
-    private ClienteService cliente;
-
     @GetMapping("/{id}")
     public TransacaoModel getById(@PathVariable long id){
         return transacao.buscarPorId(id);
     }
-
-//    @GetMapping("/contas/{nome}")
-//    public ResponseEntity<TransacaoModel> getByNome(@PathVariable String nome){
-//        //todo
-//        return null;
-//    }
 
     @PostMapping("/cadastrar")
     public String createTransaction(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
@@ -58,12 +46,11 @@ public class TransacaoController {
 
     @GetMapping("/listartodos/{id}")
     public List<TransacaoModel> listarTransacoes(@PathVariable long id){
-        //transacao.listarTransacoes(id);
         return transacao.listarTransacoes(id);
     }
 
     @GetMapping("/listartodosdata/{id}&{dataInicio}&{dataFim}")
     public List<TransacaoModel> listarTransacoesDatas(@PathVariable long id, @PathVariable String dataInicio, @PathVariable String dataFim){
-                return transacao.listarTransacoesData(id, dataInicio, dataFim);
+         return transacao.listarTransacoesData(id, dataInicio, dataFim);
     }
 }

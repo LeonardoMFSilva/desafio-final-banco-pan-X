@@ -1,12 +1,10 @@
 package com.panacademy.grupox.bluebankx.service;
 
-
 import com.panacademy.grupox.bluebankx.dao.ClienteDao;
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Service

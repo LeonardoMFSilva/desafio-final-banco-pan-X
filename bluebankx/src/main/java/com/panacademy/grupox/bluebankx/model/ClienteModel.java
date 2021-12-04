@@ -1,7 +1,6 @@
 package com.panacademy.grupox.bluebankx.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -39,24 +38,21 @@ public class ClienteModel extends AbstractEntity<Long>{
     @Column(name = "patrimonio", columnDefinition = "DECIMAL(11, 2) DEFAULT 0.00")
     private BigDecimal patrimonio;
 
-    //Endereço
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_model_id")
     private EnderecoModel enderecoModel;
 
-    // CONTA
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "conta_model_id")
     private ContaModel contaModel;
 
-    //Transações
     @JsonIgnore
     @OneToMany(mappedBy = "clienteOrigemTransacao")
-    private List<TransacaoModel> transacaoOrigem; //Muitas transações para um cliente origem
+    private List<TransacaoModel> transacaoOrigem;
 
     @JsonIgnore
     @OneToMany(mappedBy = "clienteDestinoTransacao")
-    private List<TransacaoModel> transacaoDestino; //Muitas transações para um cliente destino
+    private List<TransacaoModel> transacaoDestino;
 
     public ContaModel getContaModel() {
         return contaModel;

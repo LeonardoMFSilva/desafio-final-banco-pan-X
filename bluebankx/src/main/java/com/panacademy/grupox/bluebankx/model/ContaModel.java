@@ -8,8 +8,6 @@ import java.util.Date;
 @Entity
 @Table(name = "contas")
 public class ContaModel extends AbstractEntity<Long>{
-    //@Column(name = "id_conta", nullable = false, unique = true, columnDefinition = "INT")
-    //private Integer id;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -28,10 +26,11 @@ public class ContaModel extends AbstractEntity<Long>{
 
     @Column(name = "credito_total", nullable = false, columnDefinition = "DECIMAL(7, 2) DEFAULT 0.00")
     private BigDecimal creditoTotal;
-/*
-    public ContaModel(Integer id, String nome, String tipo, String numConta, BigDecimal saldo, BigDecimal credito, BigDecimal creditoTotal) {
-        super();
-        this.id = id;
+
+    public ContaModel() {
+    }
+
+    public ContaModel(String nome, String tipo, String numConta, BigDecimal saldo, BigDecimal credito, BigDecimal creditoTotal) {
         this.nome = nome;
         this.tipo = tipo;
         this.numConta = numConta;
@@ -39,15 +38,6 @@ public class ContaModel extends AbstractEntity<Long>{
         this.credito = credito;
         this.creditoTotal = creditoTotal;
     }
-*/
-    //@Override
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public static String gerarNumConta(){
         SimpleDateFormat d = new SimpleDateFormat("yyyyMMdd.HHmmss-SSS");

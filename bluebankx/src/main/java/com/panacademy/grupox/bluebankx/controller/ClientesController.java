@@ -1,24 +1,15 @@
 package com.panacademy.grupox.bluebankx.controller;
 
 
+import com.panacademy.grupox.bluebankx.config.AWSSNSController;
 import com.panacademy.grupox.bluebankx.dto.ClienteDTO;
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
 import com.panacademy.grupox.bluebankx.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @RestController
@@ -27,6 +18,9 @@ public class ClientesController {
 
     @Autowired
     private ClienteService cliente;
+
+    @Autowired
+    private AWSSNSController awssnsController;
 
     @GetMapping("/{id}")
     public ClienteModel getById(@PathVariable long id){
@@ -39,8 +33,9 @@ public class ClientesController {
     }
 
     @PostMapping ("/cadastrar")
-    public String createUser(@RequestBody ClienteDTO clienteModel, RedirectAttributes attr){
-        cliente.salvar(clienteModel.criarCliente());
+    public String createUser(@RequestBody ClienteDTO clienteDTO, RedirectAttributes attr){
+        cliente.salvar(clienteDTO.criarCliente());
+        awssnsController.addSubscription(clienteDTO.getEmail());
         attr.addFlashAttribute("success", "Cliente inserido com sucesso!");
         return "redirect:/clientes/cadastrar";
     }
@@ -48,6 +43,7 @@ public class ClientesController {
     @PutMapping("/editar")
     public String editUser(@RequestBody ClienteModel clienteModel, RedirectAttributes attr){
         cliente.editar(clienteModel);
+
         attr.addFlashAttribute("success", "Cliente inserido com sucesso!");
         return "redirect:/clientes/editar";
     }
@@ -58,6 +54,5 @@ public class ClientesController {
         model.addAttribute("success", "Cliente excluído com sucesso.");
         return "redirect:/home";
     }
-
 }
 

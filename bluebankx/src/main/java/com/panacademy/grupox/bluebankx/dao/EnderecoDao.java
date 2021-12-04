@@ -1,7 +1,6 @@
 package com.panacademy.grupox.bluebankx.dao;
 
 import com.panacademy.grupox.bluebankx.model.EnderecoModel;
-
 import java.util.List;
 
 public interface EnderecoDao {

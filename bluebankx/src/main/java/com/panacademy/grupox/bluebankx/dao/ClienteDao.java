@@ -1,7 +1,6 @@
 package com.panacademy.grupox.bluebankx.dao;
 
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
-
 import java.util.List;
 
 public interface ClienteDao {

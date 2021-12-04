@@ -1,15 +1,10 @@
 package com.panacademy.grupox.bluebankx.dao;
 
-import com.panacademy.grupox.bluebankx.model.ClienteModel;
 import com.panacademy.grupox.bluebankx.model.TransacaoModel;
-import org.springframework.data.jpa.repository.Modifying;
-//import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository

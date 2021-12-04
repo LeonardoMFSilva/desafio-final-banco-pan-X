@@ -4,7 +4,6 @@ import com.panacademy.grupox.bluebankx.helpers.UF;
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
 import com.panacademy.grupox.bluebankx.model.ContaModel;
 import com.panacademy.grupox.bluebankx.model.EnderecoModel;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

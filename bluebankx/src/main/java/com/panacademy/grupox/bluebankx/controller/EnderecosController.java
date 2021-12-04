@@ -20,12 +20,6 @@ public class EnderecosController {
         return endereco.buscarPorId(id);
     }
 
-    @GetMapping("/endereco/{nome}")
-    public ResponseEntity<EnderecoModel> getByNome(@PathVariable String nome){
-        //todo
-        return null;
-    }
-
     @PostMapping("/cadastrar")
     public String createAddress(@RequestBody EnderecoModel enderecoModel, RedirectAttributes attr){
         endereco.salvar(enderecoModel);
@@ -46,8 +40,5 @@ public class EnderecosController {
         model.addAttribute("success", "Endereco excluído com sucesso.");
         return "redirect:/home";
     }
-
-
-
 }
 

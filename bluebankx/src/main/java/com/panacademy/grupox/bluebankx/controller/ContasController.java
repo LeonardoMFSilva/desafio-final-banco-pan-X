@@ -1,7 +1,6 @@
 package com.panacademy.grupox.bluebankx.controller;
 
 import com.panacademy.grupox.bluebankx.model.ContaModel;
-import com.panacademy.grupox.bluebankx.model.EnderecoModel;
 import com.panacademy.grupox.bluebankx.service.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +20,7 @@ public class ContasController {
         return conta.buscarPorId(id);
     }
 
-    @GetMapping("/contas/{nome}")
-    public ResponseEntity<ContaModel> getByNome(@PathVariable String nome){
-        //todo
-        return null;
-    }
-
-    @PostMapping("/cadastrar")
+        @PostMapping("/cadastrar")
     public String createAccount(@RequestBody ContaModel contaModel, RedirectAttributes attr){
         contaModel.setNumConta(contaModel.gerarNumConta());
         conta.salvar(contaModel);
@@ -48,5 +41,4 @@ public class ContasController {
         model.addAttribute("success", "Conta excluída com sucesso.");
         return "redirect:/home";
     }
-
 }

@@ -6,13 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
-// É pra que as filhas possam passar o seu tipo próprio de id
-@MappedSuperclass // Estou dizendo que é uma superclasse, herança
+@MappedSuperclass
 public abstract class AbstractEntity<ID extends Serializable> implements Serializable {
-    // ABSTRACT quer dizer que vc só poderá usar os recursos dessa classe por herança, e não por instância
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Isso já é auto_increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Long getId() {

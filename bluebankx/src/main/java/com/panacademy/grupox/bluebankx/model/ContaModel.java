@@ -2,6 +2,8 @@ package com.panacademy.grupox.bluebankx.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "contas")
@@ -46,6 +48,11 @@ public class ContaModel extends AbstractEntity<Long>{
 //    public void setId(Integer id) {
 //        this.id = id;
 //    }
+
+    public static String gerarNumConta(){
+        SimpleDateFormat d = new SimpleDateFormat("yyyyMMdd.HHmmss-SSS");
+        return d.format(new Date());
+    }
 
     public String getNome() {
         return nome;

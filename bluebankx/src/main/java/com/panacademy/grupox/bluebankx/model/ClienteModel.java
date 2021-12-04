@@ -12,6 +12,9 @@ public class ClienteModel extends AbstractEntity<Long>{
     @Column(name = "cpf", unique = true)
     private String cpf;
 
+    @Column(name = "senha")
+    private String senha;
+
     @Column(name = "nome")
     private String nome;
 
@@ -128,5 +131,29 @@ public class ClienteModel extends AbstractEntity<Long>{
 
     public void setContaModel(ContaModel contaModel) {
         this.contaModel = contaModel;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public List<TransacaoModel> getTransacaoOrigem() {
+        return transacaoOrigem;
+    }
+
+    public void setTransacaoOrigem(List<TransacaoModel> transacaoOrigem) {
+        this.transacaoOrigem = transacaoOrigem;
+    }
+
+    public List<TransacaoModel> getTransacaoDestino() {
+        return transacaoDestino;
+    }
+
+    public void setTransacaoDestino(List<TransacaoModel> transacaoDestino) {
+        this.transacaoDestino = transacaoDestino;
     }
 }

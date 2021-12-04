@@ -29,6 +29,7 @@ public class ContasController {
 
     @PostMapping("/cadastrar")
     public String createUser(@RequestBody ContaModel contaModel, RedirectAttributes attr){
+        contaModel.setNumConta(contaModel.gerarNumConta());
         conta.salvar(contaModel);
         attr.addFlashAttribute("success", "Conta inserida com sucesso!");
         return "redirect:/contas/cadastrar";

@@ -1,6 +1,7 @@
 package com.panacademy.grupox.bluebankx.controller;
 
 
+import com.panacademy.grupox.bluebankx.dto.ClienteDTO;
 import com.panacademy.grupox.bluebankx.model.ClienteModel;
 import com.panacademy.grupox.bluebankx.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +38,8 @@ public class ClientesController {
     }
 
     @PostMapping ("/cadastrar")
-    public String createUser(@RequestBody ClienteModel clienteModel, RedirectAttributes attr){
-        cliente.salvar(clienteModel);
+    public String createUser(@RequestBody ClienteDTO clienteModel, RedirectAttributes attr){
+        cliente.salvar(clienteModel.criarCliente());
         attr.addFlashAttribute("success", "Cliente inserido com sucesso!");
         return "redirect:/clientes/cadastrar";
     }

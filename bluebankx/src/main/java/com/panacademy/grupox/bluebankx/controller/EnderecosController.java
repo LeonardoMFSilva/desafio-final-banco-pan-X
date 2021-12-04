@@ -27,14 +27,14 @@ public class EnderecosController {
     }
 
     @PostMapping("/cadastrar")
-    public String createUser(@RequestBody EnderecoModel enderecoModel, RedirectAttributes attr){
+    public String createAddress(@RequestBody EnderecoModel enderecoModel, RedirectAttributes attr){
         endereco.salvar(enderecoModel);
         attr.addFlashAttribute("success", "Endereco inserido com sucesso!");
         return "redirect:/clientes/cadastrar";
     }
 
     @PutMapping("/editar")
-    public String editUser(@RequestBody EnderecoModel enderecoModel, RedirectAttributes attr){
+    public String editAddress(@RequestBody EnderecoModel enderecoModel, RedirectAttributes attr){
         endereco.editar(enderecoModel);
         attr.addFlashAttribute("success", "Endereco inserido com sucesso!");
         return "redirect:/enderecos/editar";

@@ -28,7 +28,7 @@ public class ContasController {
     }
 
     @PostMapping("/cadastrar")
-    public String createUser(@RequestBody ContaModel contaModel, RedirectAttributes attr){
+    public String createAccount(@RequestBody ContaModel contaModel, RedirectAttributes attr){
         contaModel.setNumConta(contaModel.gerarNumConta());
         conta.salvar(contaModel);
         attr.addFlashAttribute("success", "Conta inserida com sucesso!");
@@ -36,7 +36,7 @@ public class ContasController {
     }
 
     @PutMapping("/editar")
-    public String editUser(@RequestBody ContaModel contaModel, RedirectAttributes attr){
+    public String editAccount(@RequestBody ContaModel contaModel, RedirectAttributes attr){
         conta.editar(contaModel);
         attr.addFlashAttribute("success", "Conta atualizada com sucesso!");
         return "redirect:/contas/editar";

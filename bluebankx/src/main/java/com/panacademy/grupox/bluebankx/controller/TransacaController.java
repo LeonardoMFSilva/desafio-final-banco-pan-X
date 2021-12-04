@@ -40,16 +40,15 @@ public class TransacaController {
 //    }
 
     @PostMapping("/cadastrar")
-    public String createUser(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
-        LocalDateTime horario = LocalDateTime.now();
-        transacaoModel.setDataHoraTransacao(horario);
+    public String createTransaction(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
+        transacaoModel.setDataHoraTransacao(LocalDateTime.now());
         transacao.salvar(transacaoModel);
         attr.addFlashAttribute("success", "Transação inserida com sucesso!");
         return "redirect:/";
     }
 
     @PutMapping("/editar")
-    public String editUser(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
+    public String editTransaction(@RequestBody TransacaoModel transacaoModel, RedirectAttributes attr){
         transacao.editar(transacaoModel);
         attr.addFlashAttribute("success", "Transação atualizada com sucesso!");
         return "redirect:/";

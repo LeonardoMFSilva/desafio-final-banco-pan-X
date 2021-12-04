@@ -11,6 +11,7 @@ import java.time.LocalDate;
 public class ClienteDTO {
     //ClienteModel
     private String cpf;
+    private String senha;
     private String nome;
     private LocalDate dataNasc;
     private String email;
@@ -64,6 +65,7 @@ public class ClienteDTO {
         ClienteModel clienteModel = new ClienteModel();
         clienteModel.setNome(nome);
         clienteModel.setCpf(cpf);
+        clienteModel.setSenha(senha);
         clienteModel.setDataNasc(dataNasc);
         clienteModel.setEmail(email);
         clienteModel.setTelefone(telefone);
@@ -234,5 +236,13 @@ public class ClienteDTO {
 
     public void setCreditoTotal(BigDecimal creditoTotal) {
         this.creditoTotal = creditoTotal;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

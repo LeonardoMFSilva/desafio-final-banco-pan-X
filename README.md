@@ -15,7 +15,7 @@
 
 ---
 
-> ### Como parte dos requisitos para o desafio final do Pan Academy, temos a listagem dos endpionts da nossa API no arquivo README.md que encontra-se no diretório raiz da aplicação
+> ### Como parte dos requisitos para o desafio final do Pan Academy, temos a listagem dos endpoints da nossa API no arquivo README.md que encontra-se no diretório raiz da aplicação
 ---
 ## O Desafio ##
 O banco fictício **BlueBank** está construindo uma nova plataforma e precisa de uma API para gerenciar as transações. Utilize suas novas habilidades com Java, Banco de Dados e AWS.

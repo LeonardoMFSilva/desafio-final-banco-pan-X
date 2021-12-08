@@ -1,7 +1,7 @@
 ## Listage dos endpionts da nossa API
 
 > ## clientes-controller
-- <font color="#1E90FF">**[GET]**</font> */clientes/{id}*<br>
+- **[GET]** */clientes/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/{id}
 ```
 {
@@ -35,10 +35,10 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/{id}
   "telefone": "string"
 }
 ```
-- <font color="#FF6347">**[DELETE]**</font> */clientes/{id}*<br>
+- **[DELETE]** */clientes/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/{id}
 
-- <font color="#66CDAA">**[POST]**</font> */clientes/cadastrar*<br>
+- **[POST]** */clientes/cadastrar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/cadastrar
 ```
 {
@@ -66,7 +66,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/cadastrar
 }
 ```
 
-- <font color="#FF8C00">**[PUT]**</font> */clientes/editar*<br>
+- **[PUT]** */clientes/editar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/editar
 ```
 {
@@ -101,7 +101,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/editar
 }
 ```
 
-- <font color="#1E90FF">**[GET]**</font> */clientes/listar*<br>
+- **[GET]** */clientes/listar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/listar
 ```
 [
@@ -139,7 +139,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/clientes/listar
 ```
 
 > ## contas-controller
-- <font color="#1E90FF">**[GET]**</font> */contas/{id}*<br>
+- **[GET]** */contas/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 ```
 {
@@ -153,10 +153,10 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 }
 ```
 
-- <font color="#FF6347">**[DELETE]**</font> */contas/{id}*<br>
+- **[DELETE]** */contas/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 
-- <font color="#66CDAA">**[POST]**</font> */contas/cadastrar*<br>
+- **[POST]** */contas/cadastrar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 ```
 {
@@ -170,7 +170,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 }
 ```
 
-- <font color="#FF8C00">**[PUT]**</font> */contas/editar*<br>
+- **[PUT]** */contas/editar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 ```
 {
@@ -185,7 +185,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 ```
 
 > ## enderecos-controller
-- <font color="#1E90FF">**[GET]**</font> */enderecos/{id}*<br>
+- **[GET]** */enderecos/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 ```
 {
@@ -200,10 +200,10 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 }
 ```
 
-- <font color="#FF6347">**[DELETE]**</font> */enderecos/{id}*<br>
+- **[DELETE]** */enderecos/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 
-- <font color="#66CDAA">**[POST]**</font> */enderecos/cadastrar*<br>
+- **[POST]** */enderecos/cadastrar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 ```
 {
@@ -218,7 +218,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 }
 ```
 
-- <font color="#FF8C00">**[PUT]**</font> */enderecos/editar*<br>
+- **[PUT]** */enderecos/editar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 ```
 {
@@ -234,7 +234,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 ```
 
 > ## transacao-controller
-- <font color="#1E90FF">**[GET]**</font> */transacao/{id}*<br>
+- **[GET]** */transacao/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 ```
 {
@@ -305,10 +305,10 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 }
 ```
 
-- <font color="#FF6347">**[DELETE]**</font> */transacao/{id}*<br>
+- **[DELETE]** */transacao/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 
-- <font color="#66CDAA">**[POST]**</font> */transacao/cadastrar*<br>
+- **[POST]** */transacao/cadastrar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 ```
 {
@@ -379,7 +379,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 }
 ```
 
-- <font color="#FF8C00">**[PUT]**</font> */transacao/editar*<br>
+- **[PUT]** */transacao/editar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 ```
 {
@@ -450,7 +450,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 }
 ```
 
-- <font color="#1E90FF">**[GET]**</font> */transacao/listartodos/{id}*<br>
+- **[GET]** */transacao/listartodos/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/listartodos/{id}
 ```
 [
@@ -523,7 +523,7 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/listartodos/{id}
 ]
 ```
 
-- <font color="#1E90FF">**[GET]**</font> */transacao/listartodosdata/{id}&{dataInicio}&{dataFim}*<br>
+- **[GET]** */transacao/listartodosdata/{id}&{dataInicio}&{dataFim}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/listartodosdata/{id}&{dataInicio}&{dataFim}
 ```
 [
@@ -598,24 +598,24 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/listartodosdata/{id
 
 
 > ## home-controller
-- <font color="#1E90FF">**[GET]**</font> */*<br>
+- **[GET]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
-- <font color="#4169E1">**[HEAD]**</font> */*<br>
+- **[HEAD]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
-- <font color="#66CDAA">**[POST]**</font> */*<br>
+- **[POST]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
-- <font color="#FF8C00">**[PUT]**</font> */*<br>
+- **[PUT]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
-- <font color="#FF6347">**[DELETE]**</font> */*<br>
+- **[DELETE]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
-- <font color="#4682B4">**[OPTIONS]**</font> */*<br>
+- **[OPTIONS]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
-- <font color="#00FFFF">**[PATCH]**</font> */*<br>
+- **[PATCH]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 

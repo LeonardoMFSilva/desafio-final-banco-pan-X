@@ -2,7 +2,8 @@
 ## Membros
 - **Leonardo Silva**<br>
 :octocat: https://github.com/LeonardoMFSilva/<br>
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leeosilva/)](https://www.linkedin.com/in/leeosilva/)<br>
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)]
+(https://www.linkedin.com/in/leeosilva/)<br>
 - **Marcus Vinicius Santos de Oliveira**<br>
 :octocat: https://github.com/Marvin99SO<br>
 :blue_book: https://www.linkedin.com/in/marcus-vinicius-santos-de-oliveira-1430a21b4/<br>

@@ -2,7 +2,7 @@
 ## Membros
 - **Leonardo Silva**<br>
 :octocat: https://github.com/LeonardoMFSilva/<br>
-:blue_book: http://linkedin.com/in/leeosilva<br>
+[![Linkedin Badge] http://linkedin.com/in/leeosilva<br>
 - **Marcus Vinicius Santos de Oliveira**<br>
 :octocat: https://github.com/Marvin99SO<br>
 :blue_book: https://www.linkedin.com/in/marcus-vinicius-santos-de-oliveira-1430a21b4/<br>

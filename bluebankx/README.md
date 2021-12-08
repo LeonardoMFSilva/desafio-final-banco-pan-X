@@ -1,4 +1,4 @@
-> ### Listage dos endpionts da nossa API
+## Listage dos endpionts da nossa API
 
 > ## clientes-controller
 - <font color="#1E90FF">**[GET]**</font> */clientes/{id}*<br>

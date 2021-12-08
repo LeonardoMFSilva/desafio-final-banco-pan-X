@@ -13,6 +13,8 @@
 :octocat: https://github.com/yurijivago<br>
 :blue_book: https://www.linkedin.com/in/yuri-jivago-xavier-diniz-49aa97bb/<br>
 
+- **Apresentação do projeto**<br>
+https://bit.ly/grupoX-presentation<br>
 ---
 
 ## O Desafio ##

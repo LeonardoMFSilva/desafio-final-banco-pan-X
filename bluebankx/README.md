@@ -1,4 +1,4 @@
-## Listage dos endpionts da nossa API
+## Listagem dos endpoints da nossa API
 
 > ## clientes-controller
 - **[GET]** */clientes/{id}*<br>

@@ -1,7 +1,6 @@
 package com.panacademy.grupox.bluebankx.controller;
 
 import com.panacademy.grupox.bluebankx.model.TransacaoModel;
-import com.panacademy.grupox.bluebankx.service.ClienteService;
 import com.panacademy.grupox.bluebankx.service.TransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;

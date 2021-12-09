@@ -100,21 +100,17 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 - **[GET]** */transacao/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 
-
 - **[DELETE]** */transacao/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/{id}
 
 - **[POST]** */transacao/cadastrar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/cadastrar
 
-
 - **[PUT]** */transacao/editar*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/editar
 
-
 - **[GET]** */transacao/listartodos/{id}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/listartodos/{id}
-
 
 - **[GET]** */transacao/listartodosdata/{id}&{dataInicio}&{dataFim}*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/listartodosdata/{id}&{dataInicio}&{dataFim}
@@ -140,3 +136,37 @@ http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
 
 - **[PATCH]** */*<br>
 http://sqxt2-env.eba-k423m3gi.us-east-2.elasticbeanstalk.com/
+
+> ## Estrutura do Projeto
+```
+desafio-final-banco-pan-X
+├── Arquivos db
+├── bluebankx
+│	├── .mvn/wrapper
+│	├── src
+│	│   ├── main
+│	│   │   ├── java/com/panacademy/grupox/bluebankx
+│	│   │   │   ├── config
+│	│   │   │   ├── controller
+│	│   │   │   ├── dao
+│	│   │   │   ├── dto
+│	│   │   │   ├── helpers
+│	│   │   │   ├── models
+│	│   │   │   ├── service
+│	│   │   │   └── BlueBankXApplication.java
+│	│   │   └── resources
+│	│   └── test
+│	│       └── java/com/panacademy/grupox/bluebankx
+│	├── .gitignore
+│	├── README.md
+│	├── buildspec.yml
+│	├── README.md
+│	├── mvnw
+│	├── mvnw.cmd
+│	└── pom.xml
+├── .gitignore
+└── README.md
+```
+
+> ## Diagrama entidade relacionamento - DER
+![1](./Arquivos db/DERsquadX.png)

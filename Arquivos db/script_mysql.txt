@@ -1,50 +1,13 @@
--- INSERT INTO `blue_bank`.`cliente_model` (`cpf`, `data_nascimento`, `email`, `nome`, `patrimonio`, `profissao`, `renda`, `telefone`) VALUES ('123456789', '1921-02-02', 'yuri@mail.com', 'Yuri', '20000000', 'Dev Banco Pan', '3500', '4002-8922');
+#Criando o banco de dados
+CREATE SCHEMA `bluebankx` ;
 
-CREATE SCHEMA `blue_bank_x` ;
+#Utilizando o banco
+USE `bluebankx`;
 
-USE `blue_bank_x`;
-CREATE TABLE `blue_bank_x`.`clientes`(
-	`id` INT NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY(id),
-    `cpf` VARCHAR(11) NOT NULL unique,
-    `data_nascimento` DATE NOT NULL,
-    `email` VARCHAR(60) NOT NULL,
-    `nome` VARCHAR(120) NOT NULL,
-    `patrimonio` DECIMAL NOT NULL,
-    `profissao` VARCHAR(60) NOT NULL,
-    `renda` DECIMAL NOT NULL,
-    `telefone` VARCHAR(15) NOT NULL,
-    `conta_model_id` INT NOT NULL REFERENCES `contas`(`id`),
-    -- `transacao_model_id` INT NOT NULL REFERENCES `trasacoes`(`id`),
-    `endereco_model_id` INT NOT NULL REFERENCES `contas`(`id`)
-);
-
-USE `blue_bank_x`;
-CREATE TABLE `blue_bank_x`.`contas`(
-	`id` INT NOT NULL auto_increment,
-    PRIMARY KEY(id),
-    `credito` DECIMAL NOT NULL unique,
-    `credito_total` DECIMAL NOT NULL,
-    `nome` VARCHAR(120) NOT NULL,
-    `num_conta` VARCHAR(10) NOT NULL,
-    `saldo` DECIMAL NOT NULL,
-    `tipo` VARCHAR(2) NOT NULL
-);
-
-USE `blue_bank_x`;
-CREATE TABLE `blue_bank_x`.`transacoes`(
-	`id` INT NOT NULL auto_increment,
-    PRIMARY KEY(id),
-    `cliente_destino` VARCHAR(10) NOT NULL unique,
-    `cliente_origem` VARCHAR(10) NOT NULL,
-    `data_hora_transacao` DATETIME NOT NULL,
-    `tipo_transacao` VARCHAR(3) NOT NULL,
-    `valor` DECIMAL NOT NULL
-);
-
-USE `blue_bank_x`;
-CREATE TABLE `blue_bank_x`.`enderecos`(
-	`id` INT NOT NULL auto_increment,
+#Criando as tabelas
+#Edereço
+CREATE TABLE `bluebankx`.`enderecos`(
+	`id` BIGINT NOT NULL auto_increment,
     PRIMARY KEY(id),
     `bairro` VARCHAR(50) NOT NULL unique,
     `cep` VARCHAR(8) NOT NULL,
@@ -54,3 +17,66 @@ CREATE TABLE `blue_bank_x`.`enderecos`(
     `numero` VARCHAR(10) NOT NULL,
     `UF` VARCHAR(2) NOT NULL
 );
+
+#Conta
+CREATE TABLE `bluebankx`.`contas`(
+	`id` BIGINT NOT NULL auto_increment,
+    PRIMARY KEY(id),
+    `credito` DECIMAL NOT NULL unique,
+    `credito_total` DECIMAL NOT NULL,
+    `nome` VARCHAR(120) NOT NULL,
+    `num_conta` VARCHAR(10) NOT NULL,
+    `saldo` DECIMAL NOT NULL,
+    `tipo` VARCHAR(2) NOT NULL
+);
+
+#Clientes
+CREATE TABLE `bluebankx`.`clientes` (
+  `id` BIGINT NOT NULL,
+  `cpf` VARCHAR(14) NOT NULL,
+  `data_nascimento` DATE NOT NULL,
+  `email` VARCHAR(60) NOT NULL,
+  `nome` VARCHAR(120) NOT NULL,
+  `patrimonio` DECIMAL NOT NULL,
+  `renda` DECIMAL NOT NULL,
+  `senha` VARCHAR(15) NOT NULL,
+  `telefone` VARCHAR(16) NOT NULL,
+  `conta_model_id` BIGINT NOT NULL,
+  `endereco_model_id` BIGINT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+  INDEX `endereco_fk_idx` (`endereco_model_id` ASC) VISIBLE,
+  INDEX `conta_fk_idx` (`conta_model_id` ASC) VISIBLE,
+  CONSTRAINT `endereco_fk`
+    FOREIGN KEY (`endereco_model_id`)
+    REFERENCES `bluebankx`.`enderecos` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `conta_fk`
+    FOREIGN KEY (`conta_model_id`)
+    REFERENCES `bluebankx`.`contas` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+#Transações
+CREATE TABLE `bluebankx`.`transacoes` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `data_hora_transacao` DATE NOT NULL,
+  `tipo_transacao` VARCHAR(255) NOT NULL,
+  `valor` DECIMAL NOT NULL,
+  `cliente_destino` BIGINT NOT NULL,
+  `cliente_origem` BIGINT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `cliente_origem_fk_idx` (`cliente_origem` ASC) VISIBLE,
+  INDEX `cliente_destino_fk_idx` (`cliente_destino` ASC) VISIBLE,
+  CONSTRAINT `cliente_origem_fk`
+    FOREIGN KEY (`cliente_origem`)
+    REFERENCES `bluebankx`.`clientes` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `cliente_destino_fk`
+    FOREIGN KEY (`cliente_destino`)
+    REFERENCES `bluebankx`.`clientes` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);

@@ -169,4 +169,4 @@ desafio-final-banco-pan-X
 ```
 
 > ## Diagrama entidade relacionamento - DER
-![1](./Arquivos db/DERsquadX.png)
+![1](./ArquivosDB/DERsquadX.png)

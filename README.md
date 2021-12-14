@@ -170,3 +170,6 @@ desafio-final-banco-pan-X
 
 > ## Diagrama entidade relacionamento - DER
 ![1](./ArquivosDB/DERsquadX.png)
+
+> ## Arquitetura do Microserviço
+![1](./microservice_architecture.png)
